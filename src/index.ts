@@ -1,27 +1,26 @@
-const fs = require("fs");
+import * as path from "path";
+import * as fs from "fs";
 
-class JestAllureReport implements jest.Reporter {
-    private _globalConfig: jest.GlobalConfig;
-    private _options: {};
+type ReporterConfig = {
+    resultsDir: string
+}
 
-    constructor(globalConfig: jest.GlobalConfig, options: {}) {
-        this._globalConfig = globalConfig;
-        this._options = options;
+class JestAllureReporter implements jest.Reporter {
+    private globalConfig: jest.GlobalConfig;
+
+    constructor(globalConfig: jest.GlobalConfig, options?: ReporterConfig) {
+        this.globalConfig = globalConfig;
+        const resultsDir = options.resultsDir || 'allure-results';
+        const outDir = path.resolve(".", resultsDir);
+        allure.setOptions({targetDir: outDir});
     }
 
     public onTestResult(...props) {
-        console.log('Custom reporter output:');
-        // console.log('GlobalConfig: ', this._globalConfig);
-        // console.log('Options: ', this._options)
         fs.writeFileSync("./test_results.js", JSON.stringify(props));
     }
     public onRunComplete(contexts: jest.Set<jest.Context>, results: jest.AggregatedResult) {
-        console.log('Custom reporter output:');
-        // console.log('GlobalConfig: ', this._globalConfig);
-        // console.log('Options: ', this._options)
-        console.log('results: ', results)
         fs.writeFileSync("./results.js", JSON.stringify(results));
     }
 }
 
-export = JestAllureReport;
+export = JestAllureReporter;
