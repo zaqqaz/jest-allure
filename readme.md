@@ -1,4 +1,4 @@
-# Jest-Allure
+# Jest-Allure reporting plugin
 
 Add more power to your test using Jest-Allure.
 Easily generate nice reports at the end of the execution.
