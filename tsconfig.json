@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "baseUrl": "./",
+    "paths": {
+       "jest-allure/*": ["./*"]
+    },
+    "target": "es5",
+    "outDir": "dist",
+    "module": "commonjs"
+  }
+}

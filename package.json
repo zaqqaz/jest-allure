@@ -1,0 +1,12 @@
+{
+  "name": "jest-allure",
+  "version": "0.0.1",
+  "description": "Allure Reports for jest",
+  "main": "dist/index.js",
+  "repository": "git@github.com:zaqqaz/jest-allure.git",
+  "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.8.3"
+  }
+}
