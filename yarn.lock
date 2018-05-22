@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/jest@^22.2.3":
+  version "22.2.3"
+  resolved "https://registry.npmjs.org/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
+
 typescript@^2.8.3:
   version "2.8.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"

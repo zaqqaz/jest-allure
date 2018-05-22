@@ -7,6 +7,8 @@
   "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.1.2",
     "typescript": "^2.8.3"
   }
 }
