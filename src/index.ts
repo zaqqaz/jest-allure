@@ -9,4 +9,4 @@ class JestAllureReport {
     }
 }
 
-export default JestAllureReport;
+export = JestAllureReport;
