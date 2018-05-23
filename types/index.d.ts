@@ -1,1 +1,0 @@
-declare var allure: Allure;
