@@ -1,7 +1,7 @@
-import * as path from "path";
-import * as Allure from "allure-js-commons";
+import path from "path";
+import Allure from "allure-js-commons";
+import stripAnsi from "strip-ansi";
 
-const stripAnsi = require('strip-ansi');
 declare namespace JestAllureReporter {
     type ReporterConfig = {
         resultsDir: string
