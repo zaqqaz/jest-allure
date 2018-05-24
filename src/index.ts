@@ -1,6 +1,7 @@
 import * as path from "path";
 import * as Allure from "allure-js-commons";
 
+const stripAnsi = require('strip-ansi');
 declare namespace JestAllureReporter {
     type ReporterConfig = {
         resultsDir: string
@@ -32,7 +33,7 @@ class JestAllureReporter implements jest.Reporter {
             time += result.duration || 0;
             JestAllureReporter.allure.endCase(
                 result.status,
-                result.failureMessages.length ? {message: JSON.stringify(result.failureMessages[0])} : undefined,
+                result.failureMessages.length ? {message: stripAnsi(result.failureMessages[0])} : undefined,
                 time
             );
         }
