@@ -16,13 +16,9 @@ class JestAllureReporter implements jest.Reporter {
     onTestStart(test: jest.Test) {
         const setupPath = require.resolve('./setup');
         const setupTestFrameworkScriptFile = test.context.config.setupTestFrameworkScriptFile;
-        if (setupTestFrameworkScriptFile && setupTestFrameworkScriptFile !== setupPath) {
-            throw new Error(`
-                You have already registered your own "setupTestFrameworkScriptFile" in Jest config.
-                Please refer to the documentation of "jest-allure" package and update your setup file accordingly.
-            `);
+        if (!setupTestFrameworkScriptFile) {
+            test.context.config = { ...test.context.config, setupTestFrameworkScriptFile: setupPath }
         }
-        test.context.config = { ...test.context.config, setupTestFrameworkScriptFile: setupPath }
     }
 }
 
