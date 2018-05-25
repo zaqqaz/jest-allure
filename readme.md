@@ -22,25 +22,48 @@ or
 npm install --save-dev jest-allure
 ```
 
-### register reporter in jest.config.js :
+#### add reporter to jest.config.js
 ```
 reporters: ["default", "jest-allure"],
 ```
-Enjoy 🥤🚀
 
+Run your tests and enjoy 🥤🚀
+
+---
+
+#### How to get a report
+
+To see a report in browser, run in console
+
+```
+allure serve
+```
+
+If you want to generate html version, run in console
+
+```
+allure generate
+```
+
+#### What's next
+```
+[x] Generate report from Jest results
+[ ] Add steps support
+[ ] Add labels support
+[ ] Add attachments support
+
+```
 ---
 
 #### Warning
 ``jest-allure`` reporter dynamically configure "setupTestFrameworkScriptFile" option in Jest configuration.
-**If you have registered your own setupTestFrameworkScriptFile file**, you need to manually register allure reporter.
+**If you have your own setupTestFrameworkScriptFile file**, you need to manually register allure reporter.
 
 ```typescript
 import { registerAllureReporter } from "jest-allure/dist/setup";
 ...
 registerAllureReporter();
 ```
-
-
 
 ## Contributors
 | [<img src="https://avatars3.githubusercontent.com/u/2823336?s=460&v=4" width="100px;"/><br/><sub><b>Denis Artyuhovich</b></sub>](https://denis.by) | [<img src="https://avatars1.githubusercontent.com/u/7804416?s=460&v=4" width="100px;"/><br/><sub><b>Dmitry Bogomya</b></sub>](https://github.com/bogomya) |
