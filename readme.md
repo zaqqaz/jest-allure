@@ -48,8 +48,11 @@ allure generate
 #### What's next
 
 [x] Generate report from Jest results
+
 [ ] Add steps support
+
 [ ] Add labels support
+
 [ ] Add attachments support
 
 ---
