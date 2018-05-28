@@ -1,6 +1,6 @@
 {
   "name": "jest-allure",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allure Reports for jest",
   "main": "dist/index",
   "types": "dist/index",
