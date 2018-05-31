@@ -8,6 +8,7 @@
   "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/allure-js-commons": "^0.0.0",
     "@types/jasmine": "^2.8.7",
     "@types/jest": "^22.2.3",
     "@types/node": "^10.1.2",
