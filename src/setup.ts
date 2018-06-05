@@ -1,5 +1,6 @@
 import Allure from "allure-js-commons";
 import stripAnsi from "strip-ansi";
+import { Reporter } from "./Reporter";
 
 class JasmineAllureReporter implements jasmine.CustomReporter{
     private allure: Allure;
@@ -41,7 +42,8 @@ class JasmineAllureReporter implements jasmine.CustomReporter{
 }
 
 export function registerAllureReporter() {
-    const allure = (global as any).allure = new Allure();
+    const allure = new Allure();
+    const reporter = (global as any).reporter = new Reporter(allure);
     jasmine.getEnv().addReporter(new JasmineAllureReporter(allure));
 }
 
