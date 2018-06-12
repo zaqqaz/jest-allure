@@ -73,5 +73,3 @@ registerAllureReporter();
 declare global {
     export const reporter: Reporter;
 }
-
-export declare const reporterz: Reporter;

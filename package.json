@@ -3,10 +3,13 @@
   "version": "0.0.3",
   "description": "Allure Reports for jest",
   "main": "dist/index",
-  "types": "./dist/setup.d.ts",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
   "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
   "license": "MIT",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc"
+  },
   "keywords": [
     "jest",
     "report",
