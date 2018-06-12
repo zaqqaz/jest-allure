@@ -1,6 +1,6 @@
 {
   "name": "jest-allure",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Allure Reports for jest",
   "main": "dist/index",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
