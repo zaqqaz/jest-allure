@@ -2,7 +2,28 @@ import Allure from "allure-js-commons";
 import stripAnsi from "strip-ansi";
 import { Reporter } from "./Reporter";
 
-class JasmineAllureReporter implements jasmine.CustomReporter{
+declare namespace jasmine {
+    function getEnv(): any;
+    interface CustomReporter {
+        jasmineStarted?(suiteInfo: any): void;
+        suiteStarted?(result: CustomReporterResult): void;
+        specStarted?(result: CustomReporterResult): void;
+        specDone?(result: CustomReporterResult): void;
+        suiteDone?(result: CustomReporterResult): void;
+        jasmineDone?(runDetails: any): void;
+    }
+    interface CustomReporterResult {
+        description: string;
+        failedExpectations?: any[];
+        fullName: string;
+        id: string;
+        passedExpectations?: any[];
+        pendingReason?: string;
+        status?: string;
+    }
+}
+
+class JasmineAllureReporter implements jasmine.CustomReporter {
     private allure: Allure;
 
     constructor(allure: Allure) {
@@ -48,3 +69,9 @@ export function registerAllureReporter() {
 }
 
 registerAllureReporter();
+
+declare global {
+    export const reporter: Reporter;
+}
+
+export declare const reporterz: Reporter;

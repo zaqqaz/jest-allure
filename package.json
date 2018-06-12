@@ -3,21 +3,26 @@
   "version": "0.0.2",
   "description": "Allure Reports for jest",
   "main": "dist/index",
-  "types": "dist/index",
+  "types": "./dist/setup.d.ts",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
   "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
   "license": "MIT",
-  "keywords": ["jest", "report", "reports", "allure", "e2e", "tests", "screenshots"],
-  "devDependencies": {
+  "keywords": [
+    "jest",
+    "report",
+    "reports",
+    "allure",
+    "e2e",
+    "tests",
+    "screenshots"
+  ],
+  "dependencies": {
     "@types/allure-js-commons": "^0.0.0",
-    "@types/jasmine": "^2.8.7",
     "@types/jest": "^22.2.3",
     "@types/node": "^10.1.2",
     "@types/strip-ansi": "^3.0.0",
-    "typescript": "^2.8.3"
-  },
-  "dependencies": {
     "allure-js-commons": "^1.3.2",
-    "strip-ansi": "^4.0.0"
+    "strip-ansi": "^4.0.0",
+    "typescript": "^2.8.3"
   }
 }
