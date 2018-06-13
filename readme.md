@@ -45,12 +45,63 @@ If you want to generate html version, run in console
 allure generate
 ```
 
+# Advanced features
+You can add description, screenshots, steps, severity and lots of other 
+fancy stuff to your reports.
+
+Global variable `reporter` available in your tests with such methods:
+
+```
+    description(description: string): this;
+    severity(severity: Severity): this;
+    epic(epic: string): this;
+    feature(feature: string): this;
+    story(story: string): this;
+    startStep(name: string): this;
+    endStep(status?: Status): this;
+    addArgument(name: string): this;
+    addEnvironment(name: string, value: string): this;
+    addAttachment(name: string, buffer: any, type: string): this;
+    addLabel(name: string, value: string): this;
+    addParameter(paramName: string, name: string, value: string): this;
+```
+**Example**
+
+```
+describe("Fancy test", () => {
+        ...
+        
+        it("Test your amazing feature", async () => {
+            reporter
+                .description("Feature should work cool")
+                .severity(Severity.Critical)
+                .feature(Feature.Betting)
+                .story("BOND-007");
+
+            reporter.startStep("Check it's fancy");
+            // expect that it's fancy
+            reporter.endStep();
+            
+            reporter.startStep("Check it's cool");
+            // expect that it's cool
+            reporter.endStep();
+
+            const screenshotBuffer = await page.screenshot();
+            reporter.addAttachment("Screenshot", screenshotBuffer, "image/png");
+        });
+        
+        ...
+    }
+);
+
+```
 #### What's next
 
 - [x] Generate report from Jest results
-- [ ] Add steps support
-- [ ] Add labels support
-- [ ] Add attachments support
+- [x] Add steps support
+- [x] Add labels support
+- [x] Add attachments support
+- [ ] Add more examples
 
 ---
 
