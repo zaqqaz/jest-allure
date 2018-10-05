@@ -1,6 +1,7 @@
 import Allure from "allure-js-commons";
 import stripAnsi from "strip-ansi";
 import { Reporter } from "./Reporter";
+import { relative } from "path";
 
 declare namespace jasmine {
     function getEnv(): any;
@@ -30,16 +31,16 @@ class JasmineAllureReporter implements jasmine.CustomReporter {
         this.allure = allure;
     }
 
-    suiteStarted(suite: jasmine.CustomReporterResult) {
-        this.allure.startSuite(suite.fullName);
-    }
+    jasmineStarted() {
+        this.allure.startSuite(relative(process.cwd(), (expect as any).getState().testPath));
+    };
 
-    suiteDone() {
+    jasmineDone() {
         this.allure.endSuite();
     };
 
     specStarted(spec: jasmine.CustomReporterResult) {
-        this.allure.startCase(spec.description);
+        this.allure.startCase(spec.fullName);
     };
 
     specDone(spec: jasmine.CustomReporterResult) {
