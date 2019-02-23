@@ -1,4 +1,4 @@
-import Allure from "allure-js-commons";
+import Allure = require("allure-js-commons");
 import stripAnsi from "strip-ansi";
 import { Reporter } from "./Reporter";
 

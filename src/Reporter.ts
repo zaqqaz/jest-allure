@@ -1,4 +1,4 @@
-import Allure from "allure-js-commons";
+import Allure = require("allure-js-commons");
 
 export enum Status {
     Passed = "passed",
