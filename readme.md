@@ -109,8 +109,9 @@ describe("Fancy test", () => {
 ---
 
 ### Additional projects
-https://github.com/zaqqaz/visual-unit-tests
-https://github.com/zaqqaz/jest-allure-image-snapshot
+[visual-unit-tests](https://github.com/zaqqaz/visual-unit-tests)
+
+[jest-allure-image-snapshot](https://github.com/zaqqaz/jest-allure-image-snapshot)
 
 #### Warning
 ``jest-allure`` reporter dynamically configure "setupTestFrameworkScriptFile" option in Jest configuration.
