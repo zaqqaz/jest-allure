@@ -68,6 +68,9 @@ Global variable `reporter` available in your tests with such methods:
 **Example**
 
 ```
+import { Severity } from "jest-allure/dist/Reporter";
+import { Feature } from "somwhere in your project";
+
 describe("Fancy test", () => {
         ...
         
@@ -101,9 +104,13 @@ describe("Fancy test", () => {
 - [x] Add steps support
 - [x] Add labels support
 - [x] Add attachments support
-- [ ] Add more examples
+- [x] Add more examples
 
 ---
+
+### Additional projects
+https://github.com/zaqqaz/visual-unit-tests
+https://github.com/zaqqaz/jest-allure-image-snapshot
 
 #### Warning
 ``jest-allure`` reporter dynamically configure "setupTestFrameworkScriptFile" option in Jest configuration.
