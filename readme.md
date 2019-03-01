@@ -107,12 +107,10 @@ describe("Fancy test", () => {
 
 #### Warning
 ``jest-allure`` reporter dynamically configure "setupTestFrameworkScriptFile" option in Jest configuration.
-**If you have your own setupTestFrameworkScriptFile file**, you need to manually register allure reporter.
+**If you have your own setupTestFrameworkScriptFile file**, you need to manually register allure reporter, for it you need to import jest-allure/dist/setup.
 
 ```typescript
-import { registerAllureReporter } from "jest-allure/dist/setup";
-...
-registerAllureReporter();
+import "jest-allure/dist/setup";
 ```
 
 ## Contributors
