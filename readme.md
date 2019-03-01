@@ -11,7 +11,7 @@ information from everyday execution of tests.
 
 ![Allure Report](https://user-images.githubusercontent.com/2823336/40350093-59cad576-5db1-11e8-8210-c4db3bf825a1.png)
 
-# Installation
+#### Installation
 
 ```
 yarn add -D jest-allure
@@ -108,7 +108,7 @@ describe("Fancy test", () => {
 
 ---
 
-### Additional projects
+#### Additional projects
 [visual-unit-tests](https://github.com/zaqqaz/visual-unit-tests)
 
 [jest-allure-image-snapshot](https://github.com/zaqqaz/jest-allure-image-snapshot)
