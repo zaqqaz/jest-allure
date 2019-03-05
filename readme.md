@@ -1,15 +1,26 @@
 # Jest-Allure reporting plugin
 
-Add more power to your tests using Jest-Allure.
+#### Add more power to your tests using Jest-Allure. Easily generate nice reports at the end of the execution.
 
-Easily generate nice reports at the end of the execution.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+[![GitHub followers](https://img.shields.io/github/followers/zaqqaz.svg?style=social)](https://github.com/zaqqaz)
+[![GitHub stars](https://img.shields.io/github/stars/zaqqaz/jest-allure.svg?style=social)](https://github.com/zaqqaz/jest-allure/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/zaqqaz/jest-allure.svg?style=social)](https://github.com/zaqqaz/jest-allure/watchers)
+#### Examples
+- [Report example](https://103-170502579-gh.circle-artifacts.com/0/Report/Allure/index.html)
+- [Visual unit tests with allure report. Demo project](https://github.com/zaqqaz/visual-unit-tests)
+- [Simple integration test](https://github.com/zaqqaz/jest-allure/blob/master/examples/__tests__/test1.js)
+
+<hr>
+
+![Allure Report](https://user-images.githubusercontent.com/2823336/40350093-59cad576-5db1-11e8-8210-c4db3bf825a1.png)
 
 [Allure Framework](https://github.com/allure-framework/allure2) is a flexible lightweight multi-language test report tool that not only
 shows a very concise representation of what have been tested in a neat web report form,
 but allows everyone participating in the development process to extract maximum of useful
 information from everyday execution of tests.
-
-![Allure Report](https://user-images.githubusercontent.com/2823336/40350093-59cad576-5db1-11e8-8210-c4db3bf825a1.png)
 
 #### Installation
 
