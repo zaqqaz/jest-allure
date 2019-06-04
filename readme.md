@@ -33,6 +33,13 @@ or
 npm install --save-dev jest-allure
 ```
 
+#### jest -v >24 ?
+Then add `jest-allure/dist/setup` to `setupFilesAfterEnv` section of your config.
+
+```
+setupFilesAfterEnv: ["jest-allure/dist/setup"]
+```
+
 #### add reporter to jest.config.js
 ```
 reporters: ["default", "jest-allure"],
