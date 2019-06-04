@@ -33,12 +33,14 @@ or
 npm install --save-dev jest-allure
 ```
 
-#### jest -v >24 ?
+### jest -v >24 ?
 Then add `jest-allure/dist/setup` to `setupFilesAfterEnv` section of your config.
 
 ```
 setupFilesAfterEnv: ["jest-allure/dist/setup"]
 ```
+
+### jest -v < 24 ?
 
 #### add reporter to jest.config.js
 ```
@@ -138,6 +140,8 @@ describe("Fancy test", () => {
 ```typescript
 import "jest-allure/dist/setup";
 ```
+
+In case if you have jest version > 24 just add `jest-allure/dist/setup` to `setupFilesAfterEnv` section of your config.
 
 ## Contributors
 | [<img src="https://avatars3.githubusercontent.com/u/2823336?s=460&v=4" width="100px;"/><br/><sub><b>Denis Artyuhovich</b></sub>](https://denis.by) | [<img src="https://avatars1.githubusercontent.com/u/7804416?s=460&v=4" width="100px;"/><br/><sub><b>Dmitry Bogomya</b></sub>](https://github.com/bogomya) |
