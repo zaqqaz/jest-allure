@@ -4,7 +4,7 @@
   "description": "Allure Reports for jest",
   "main": "dist/index",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
-  "author": "Denis Artyuhovich <dartyuhovich@evolutiongaming.com>",
+  "author": "Denis Artyuhovich (zaqqaz) <i@denis.by>",
   "license": "MIT",
   "scripts": {
     "prepublish": "npm run build",
