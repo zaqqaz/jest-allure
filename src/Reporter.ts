@@ -16,8 +16,19 @@ export enum Severity {
     Trivial = 'trivial'
 }
 
+export type StartPrerequisitesStep = {
+    name: string;
+    timestamp: number;
+};
+
+export type EndPrerequisitesStep = {
+    status: Status;
+    timestamp: number;
+};
+
 export class Reporter {
     private allure: Allure;
+    private prerequisiteActions: (StartPrerequisitesStep | EndPrerequisitesStep)[] = [];
 
     constructor(allure: Allure) {
         this.allure = allure;
@@ -49,12 +60,26 @@ export class Reporter {
     }
 
     public startStep(name: string) {
-        this.allure.startStep(name);
+        if (this.allure.getCurrentTest()) {
+            this.allure.startStep(name);
+        } else {
+            this.prerequisiteActions.push({
+                name,
+                timestamp: Date.now(),
+            });
+        }
         return this;
     }
 
     public endStep(status: Status = Status.Passed) {
-        this.allure.endStep(status);
+        if (this.allure.getCurrentTest()) {
+            this.allure.endStep(status);
+        } else {
+            this.prerequisiteActions.push({
+                status,
+                timestamp: Date.now(),
+            });
+        }
         return this;
     }
 
@@ -81,5 +106,9 @@ export class Reporter {
     public addParameter(paramName: string, name: string, value: string) {
         this.allure.getCurrentTest().addParameter(paramName, name, value);
         return this;
+    };
+
+    public getPrerequisiteActions() {
+        return this.prerequisiteActions;
     };
 }

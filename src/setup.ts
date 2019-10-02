@@ -1,6 +1,6 @@
 import Allure from "allure-js-commons";
 import stripAnsi from "strip-ansi";
-import { Reporter } from "./Reporter";
+import {EndPrerequisitesStep, Reporter, StartPrerequisitesStep, Status} from "./Reporter";
 
 declare namespace jasmine {
     function getEnv(): any;
@@ -25,9 +25,11 @@ declare namespace jasmine {
 
 class JasmineAllureReporter implements jasmine.CustomReporter {
     private allure: Allure;
+    private reporter: Reporter;
 
-    constructor(allure: Allure) {
+    constructor(allure: Allure, reporter: Reporter) {
         this.allure = allure;
+        this.reporter = reporter;
     }
 
     suiteStarted(suite: jasmine.CustomReporterResult) {
@@ -40,6 +42,20 @@ class JasmineAllureReporter implements jasmine.CustomReporter {
 
     specStarted(spec: jasmine.CustomReporterResult) {
         this.allure.startCase(spec.description);
+        const prerequisiteActions = this.reporter.getPrerequisiteActions();
+        if (prerequisiteActions.length > 0) {
+            this.allure.startStep('Prerequisites', prerequisiteActions[0].timestamp);
+            for (const action of prerequisiteActions) {
+                if (typeof (action as StartPrerequisitesStep).name !== "undefined") {
+                    this.allure.startStep((action as StartPrerequisitesStep).name, action.timestamp);
+                    continue;
+                }
+                if (typeof (action as EndPrerequisitesStep).status !== "undefined") {
+                    this.allure.endStep((action as EndPrerequisitesStep).status, action.timestamp);
+                }
+            }
+            this.allure.endStep(Status.Passed, prerequisiteActions[prerequisiteActions.length - 1].timestamp);
+        }
     };
 
     specDone(spec: jasmine.CustomReporterResult) {
@@ -65,7 +81,7 @@ class JasmineAllureReporter implements jasmine.CustomReporter {
 export function registerAllureReporter() {
     const allure = new Allure();
     const reporter = (global as any).reporter = new Reporter(allure);
-    jasmine.getEnv().addReporter(new JasmineAllureReporter(allure));
+    jasmine.getEnv().addReporter(new JasmineAllureReporter(allure, reporter));
 }
 
 registerAllureReporter();
