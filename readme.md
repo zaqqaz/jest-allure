@@ -53,6 +53,8 @@ Run your tests and enjoy 🥤🚀
 
 #### How to get a report
 
+You need to install the [CLI](https://github.com/allure-framework/allure2#download) in order to obtain a report.
+
 To see a report in browser, run in console
 
 ```
