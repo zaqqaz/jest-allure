@@ -48,6 +48,11 @@ export class Reporter {
         return this;
     }
 
+    public testId(testId: string) {
+        this.addLabel('testId', testId);
+        return this;
+    }
+
     public startStep(name: string) {
         this.allure.startStep(name);
         return this;

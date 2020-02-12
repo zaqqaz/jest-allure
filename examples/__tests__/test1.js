@@ -20,7 +20,8 @@ describe(
             reporter
                 .description("Home Page test suite")
                 .story("GOOGL-01")
-                .severity(Severity.Critical);
+                .severity(Severity.Critical)
+                .testId('TEST-01');
 
             const text = await page.evaluate(() => document.body.textContent);
 
