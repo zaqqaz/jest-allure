@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "Allure Reports for jest",
   "main": "dist/index",
+  "types": "dist/setup.d.ts",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
   "author": "Denis Artyuhovich (zaqqaz) <i@denis.by>",
   "license": "MIT",
