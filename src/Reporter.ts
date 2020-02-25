@@ -54,8 +54,7 @@ export class Reporter {
     }
 
     public startStep(name: string) {
-        this.allure.startStep(name);
-        return this;
+        return this.allure.startStep(name);
     }
 
     public endStep(status: Status = Status.Passed) {
