@@ -100,7 +100,7 @@ describe("Fancy test", () => {
             reporter
                 .description("Feature should work cool")
                 .severity(Severity.Critical)
-                .feature(Feature.Betting)
+                .feature('Feature.Betting')
                 .story("BOND-007");
 
             reporter.startStep("Check it's fancy");
