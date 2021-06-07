@@ -38,7 +38,7 @@ npm install --save-dev jest-allure
 
 Jest-allure doesn't support jest-circus. (but PR's are welcome)
 
-**As starting from jest@27 it uses jest-circus as default testrunner you must updated jest.config.js and set:**
+**As starting from jest@27 it uses jest-circus as default testrunner you must update jest.config.js and set:**
 
 ``` 
 "testRunner": "jest-jasmine2"
