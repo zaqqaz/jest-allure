@@ -1,6 +1,6 @@
 {
   "name": "jest-allure",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Allure Reports for jest",
   "main": "dist/index",
   "repository": "git@github.com:zaqqaz/jest-allure.git",
@@ -26,8 +26,8 @@
     "@types/allure-js-commons": "^0.0.0",
     "@types/jest": "^22.2.3",
     "@types/node": "^10.1.2",
-    "@types/strip-ansi": "^3.0.0",
+    "@types/strip-ansi": "^5.0.0",
     "allure-js-commons": "^1.3.2",
-    "strip-ansi": "^4.0.0"
+    "strip-ansi": "^7.0.0"
   }
 }
